@@ -1,0 +1,4 @@
+int lgn = 0, lglgn = 0;
+	for (int tempN = N; tempN > 0; ++lgn, tempN /= 2);
+	for (int temp_lgn = lgn; temp_lgn > 0; ++lglgn, temp_lgn /= 2);
+	printf("%d %d", lgn,lglgn);

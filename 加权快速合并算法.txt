@@ -1,0 +1,24 @@
+#include<stdio.h>
+#define N 100
+void main() {
+	//加权快速合并算法
+	int i,j,p,q,id[N],sz[N];
+	for(i=0;i<N;i++)
+	{
+		id[i] = i; sz[i] = i;
+	}
+	while (scanf("%d%d", &p, &q) == 2) {
+		for (i = p; i != id[i]; i = id[i])
+			id[i] = id[id[i]];    //让i指向i的爷爷节点
+		for (j = q; j != id[j]; j = id[j])
+	    	id[j] = id[id[j]];
+		if (i == j) continue;
+		if (sz[i] < sz[j]) {
+			id[i] = j; sz[j] += sz[i];
+		}
+		else {
+			id[j] = i; sz[i] += sz[j];
+		}
+	}
+	system("pause");
+}

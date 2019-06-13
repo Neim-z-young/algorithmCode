@@ -1,0 +1,7 @@
+*.zip
+testcode/
+.vscode
+*.exe
+*.ilk
+*.pdb
+*.obj
